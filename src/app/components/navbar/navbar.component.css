@@ -1,0 +1,31 @@
+nav a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  margin: 0 10px; /* Butonlar arasında boşluk */
+}
+
+nav a:hover {
+  background-color: #242424;
+}
+
+nav a.active {
+  background-color: #242424;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column; /* Küçük ekranlarda elemanları dikey olarak hizala */
+  }
+
+  nav a {
+    text-align: left; /* Dikey hizalama için sola yasla */
+    border-bottom: 1px solid #ddd; /* Elemanlar arasına çizgi ekle */
+  }
+
+  nav a:last-child {
+    border-bottom: none; /* Son elemanın alt çizgisini kaldır */
+  }
+}

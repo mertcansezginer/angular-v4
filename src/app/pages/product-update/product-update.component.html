@@ -1,0 +1,53 @@
+
+<div *ngIf="!dataLoaded; else form">
+  <div class="spinner">
+    <div class="loader"></div>
+  </div>
+</div>
+
+<ng-template #form>
+  <div class="container">
+    <h2>Update Form</h2>
+    <form [formGroup]="applyForm" (submit)="submitApplication()">
+
+      <div class="row">
+        
+        <div class="col-25"><label for="id">ID</label></div>
+        <div class="col-75"><input type="text"  name="id" disabled="" [value]="product?.id" ></div>
+      </div>
+
+      <div class="row">
+        <div class="col-25"><label for="categoryId" >Category ID</label> </div>
+        <div class="col-75"><input type="text" formControlName="categoryId" id="categoryId"  placeholder="Category name" [value]="product?.name" > </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25"><label for="unitPrice">Unit Price</label></div>
+        <div class="col-75"><input type="text" formControlName="unitPrice" id="unitPrice"  [value]="product?.unitPrice" placeholder="Unit Price" ></div>
+      </div>
+
+      <div class="row">
+        <div class="col-25"><label for="unitsInStock">Units In Stock</label></div>
+        <div class="col-75"><input type="text"  formControlName="unitsInStock" id="unitsInStock"  [value]="product?.unitsInStock" placeholder="UnitsInStock" ></div>
+      </div>
+
+      <div class="row">
+        <div class="col-25"><label for="reorderLevel" >Reorder Level</label></div>
+        <div class="col-75"><input type="text"  formControlName="reorderLevel" id="reorderLevel" [value]="product?.reorderLevel" placeholder="Reorder Level"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-25"><label for="discontinued" >Discontinued</label></div>
+        <div class="col-75"><input type="text"  formControlName="discontinued" id="discontinued" [value]="product?.discontinued" placeholder="Discontinued" ></div>
+      </div>
+
+      <div class="row">
+        <div class="col-25"><label for="name">Name</label></div>
+        <div class="col-75"><input type="text"  formControlName="name" id="name" [value]="product?.name" placeholder="Name" ></div>
+      </div>
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+</ng-template>

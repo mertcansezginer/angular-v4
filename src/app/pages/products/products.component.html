@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <td>ID</td>
+    <td>CATEGORY ID</td>
+    <td>UNIT PRICE</td>
+    <td>UNITS IN STOCK</td>
+    <td>REORDER LEVEL</td>
+    <td>DISCONTINUED</td>
+    <td>NAME</td>
+    <td>UPDATE</td>
+    <td>DELETE</td>
+
+  </tr>
+  <tr *ngFor="let product of ProductList">
+    <td>{{product.id}}</td>
+    <td>{{product.categoryId}}</td>
+    <td>{{product.unitPrice}}</td>
+    <td>{{product.unitsInStock}}</td>
+    <td>{{product.reorderLevel}}</td>
+    <td>{{product.discontinued}}</td>
+    <td>{{product.name}}</td>
+    <td><button [routerLink]="['/products/update/',product.id]">Update</button></td>
+    <td><button (click)="removeProduct(product.id)">Delete</button></td>
+  </tr>
+</table>

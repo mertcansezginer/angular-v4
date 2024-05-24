@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <td>ID</td>
+    <td>NAME</td>
+    <td>DESCRIPTION</td>
+    <td>UPDATE</td>
+    <td>DELETE</td>
+  </tr>
+  <tr *ngFor="let category of CategoryList">
+    <td>{{category.id}}</td>
+    <td>{{category.name}}</td>
+    <td>{{category.description}}</td>
+    <td><button [routerLink]="['/categories/update/',category.id]">Update</button></td>
+    <td><button (click)="removeCategory(category.id)">Delete</button></td>
+  </tr>
+</table>
